@@ -43,18 +43,19 @@ public class VirtualPetShelterApp {
 			}
 
 			else if (optionsEntered.equals("3")) {
-
+				System.out.println(myShelter.displayPetNameAndDescription());
 				System.out.println("Enter the name of the pet you would like to play with");
 				nameInput = input.nextLine();
 				if (myShelter.checkForPet(nameInput)) {
 					myShelter.playWithAPet(nameInput);
 					System.out.println("You played with " + nameInput);
-				} else {
-					System.out.println("Sorry, invalid name");
+					// } else {
+					// System.out.println("Sorry, invalid name");
 				}
 			}
 
 			else if (optionsEntered.equals("4")) {
+				System.out.println("What is the name of the pet");
 				nameInput = input.nextLine();
 				if (myShelter.checkForPet(nameInput))
 					myShelter.adoptPetByName(nameInput);

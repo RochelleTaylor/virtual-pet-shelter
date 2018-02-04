@@ -52,4 +52,9 @@ public class VirtualPet {
 
 	}
 
+	public String getDescription() {
+
+		return description;
+	}
+
 }

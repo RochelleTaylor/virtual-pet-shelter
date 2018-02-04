@@ -72,5 +72,14 @@ public class VirtualPetShelter {
 			pets += pet.getName() + "\t|" + pet.getHunger() + "\t|" + pet.getThirst() + "\t|" + pet.getPlay() + "\n";
 		}
 		return pets;
+
+	}
+
+	public String displayPetNameAndDescription() {
+		String pets = "";
+		for (VirtualPet pet : petList.values()) {
+			pets += pet.getName() + "\t|" + pet.getDescription() + "\n";
+		}
+		return pets;
 	}
 }
