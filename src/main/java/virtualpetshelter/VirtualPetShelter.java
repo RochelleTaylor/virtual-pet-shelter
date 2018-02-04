@@ -6,23 +6,22 @@ import java.util.Map;
 
 public class VirtualPetShelter {
 
-	VirtualPet pet;
+	private VirtualPet pet;
+	private Map<String, VirtualPet> petList = new HashMap<String, VirtualPet>();
 
-	Map<String, VirtualPet> petList = new HashMap<String, VirtualPet>();
+	public VirtualPetShelter() {
+		admitVirtualPetByName("Bob", " is blue ");
 
-	public void addVirtualPet(VirtualPet newPet) {
+	}
+
+	public void addVirtualPetToPetList(VirtualPet newPet) {
 		petList.put(newPet.getName(), newPet);
 	}
 
-	public VirtualPetShelter() {
-		addVirtualPetByName("Bob", " is blue ");
-
-	}
-
-	public void addVirtualPetByName(String name, String description) {
+	public void admitVirtualPetByName(String name, String description) {
 		pet = new VirtualPet(name, description);
 
-		addVirtualPet(pet);
+		addVirtualPetToPetList(pet);
 	}
 
 	public VirtualPet getPetByName(String name) {
@@ -50,13 +49,6 @@ public class VirtualPetShelter {
 		}
 	}
 
-	public void playWithAllPets() {
-		for (VirtualPet pet : petList.values()) {
-			pet.play();
-		}
-
-	}
-
 	public void tickAllPets() {
 		for (VirtualPet pet : petList.values()) {
 			pet.tick();
@@ -67,5 +59,18 @@ public class VirtualPetShelter {
 	public void playWithAPet(String name) {
 		petList.get(name).play();
 
+	}
+
+	public boolean checkForPet(String name) {
+		boolean result = petList.containsKey(name);
+		return result;
+	}
+
+	public String displayPets() {
+		String pets = "";
+		for (VirtualPet pet : petList.values()) {
+			pets += pet.getName() + "\t|" + pet.getHunger() + "\t|" + pet.getThirst() + "\t|" + pet.getPlay() + "\n";
+		}
+		return pets;
 	}
 }

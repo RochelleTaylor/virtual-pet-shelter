@@ -14,7 +14,7 @@ public class VirtualPetShelterTest {
 
 	@Before
 	public void setup() {
-		virtualPetShelterUnderTest.addVirtualPetByName(NAME, DESCRIPTION);
+		virtualPetShelterUnderTest.admitVirtualPetByName(NAME, DESCRIPTION);
 
 	}
 
